@@ -24,7 +24,5 @@ public class Minuscula {
 	}
 	public static void main(String[] args) {
 		Minuscula m=new Minuscula();
-
 	}
-
 }
