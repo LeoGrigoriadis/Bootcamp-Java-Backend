@@ -45,6 +45,7 @@ public class Ahorcado {
 			if(comprobarRepeticion(letra, caracteres)) {
 				System.out.println("La letra es repetida.");
 			}else if(comprobarAcertadas(letra, p1)) {
+				
 				//me falta la parte donde muestra la palabra con las letras 
 				//que va adivinando y le permite ganar al jugador 2.
 			}
@@ -52,7 +53,7 @@ public class Ahorcado {
 				caracteres[cont]=letra;
 				cont++; trys--;
 			}
-			mostrarIngresadas(caracteres);
+			mostrarIngresadas(caracteres, trys);
 		}
 		return acerto;
 	}
@@ -66,7 +67,8 @@ public class Ahorcado {
 		}
 		return flag;
 	}
-	private void mostrarIngresadas(char[] car) {
+	private void mostrarIngresadas(char[] car, int trys) {
+		System.out.println("Intentos restantes: "+trys);
 		for(int i=0;i<car.length;i++) {
 			System.out.print(car[i]+" - ");
 		}
