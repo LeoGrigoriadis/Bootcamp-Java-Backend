@@ -4,5 +4,4 @@ public class Remolque {
 	public Remolque(int peso) { this.peso=peso; }
 	@Override
 	public String toString() { return "[peso=" + peso + "]"; }
-	
 }

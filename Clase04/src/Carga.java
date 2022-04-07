@@ -1,6 +1,6 @@
 
 public class Carga extends Vehiculo{
-	private int velocidad;
+	private double velocidad;
 	private Remolque remolque= null;
 	
 	public Carga(String matricula) {

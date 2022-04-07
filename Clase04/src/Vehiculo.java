@@ -1,7 +1,7 @@
 
 public class Vehiculo {
 	private String matricula;
-	private int velocidad;
+	private double velocidad;
 	
 	public Vehiculo(String matricula) {
 		this.matricula=matricula;
@@ -11,7 +11,7 @@ public class Vehiculo {
 		this.velocidad += velocidad;
 		System.out.println("Acelerando hasta "+this.velocidad+" km/h.");
 	}
-	public int getVelocidad() {
+	public double getVelocidad() {
 		return velocidad;
 	}
 	public String getMatricula() {

@@ -12,5 +12,4 @@ public class Particular extends Vehiculo{
 		return "Particular [puertas=" + puertas + ", velocidad=" + getVelocidad() + ", matricula="
 				+ getMatricula() + "]";
 	}
-	
 }
