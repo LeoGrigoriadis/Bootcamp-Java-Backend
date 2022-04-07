@@ -12,13 +12,10 @@ public class Carga extends Vehiculo{
 	public void quitarRemolque() { System.out.println("Remolque quitado."); remolque=null; }
 	
 	@Override
-	public void setAcelerar(int acelerar) {
+	public void setAcelerar(int acelerar) throws DemasiadoRapidoException{
+		if(remolque!=null && (velocidad += (acelerar))>100) { throw new DemasiadoRapidoException(); }
 		velocidad += (acelerar);
 		System.out.println("Acelerando hasta "+this.velocidad+" km/h.");
-		if(remolque!=null&&velocidad>100) {
-			System.out.println("La velocidad es muy alta, se bajará al máximo de 100km/h.");
-			velocidad=100;
-		}
 	}
 	public String toString() {
 		return "Carga [velocidad=" + velocidad + ", remolque=" + remolque + ", matricula=" + getMatricula() + "]";

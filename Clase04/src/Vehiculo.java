@@ -7,9 +7,9 @@ public class Vehiculo {
 		this.matricula=matricula;
 		this.velocidad=0;
 	}
-	public void setAcelerar(int velocidad) {
-		this.velocidad += velocidad;
-		System.out.println("Acelerando hasta "+this.velocidad+" km/h.");
+	public void setAcelerar (int acelerar) throws DemasiadoRapidoException{
+		velocidad += (acelerar);
+		System.out.println("Acelerando hasta "+velocidad+" km/h.");
 	}
 	public double getVelocidad() {
 		return velocidad;
