@@ -15,5 +15,5 @@ public class Secretario extends Empleado implements imprimirDatos{
 	
 	//imprimir datos
 	@Override
-	public void imprimir() { super.imprimir(); System.out.print("puesto: "+puesto+"\n"); }
+	public void imprimir() { super.imprimir(); System.out.print(", puesto: "+puesto+"\n"); }
 }

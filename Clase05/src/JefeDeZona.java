@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class JefeDeZona extends Empleado implements imprimirDatos{
-	private String despacho, numFax ,puesto="secretario";
+	private String despacho, numFax ,puesto="Jefe de zona";
 	private Secretario secretario;
 	private ArrayList<Vendedor> listaVendedores= new ArrayList<Vendedor>();
 	private Coche coche;
@@ -29,5 +29,5 @@ public class JefeDeZona extends Empleado implements imprimirDatos{
 	
 	//imprimir datos
 	@Override
-	public void imprimir() { super.imprimir(); System.out.print("puesto: "+puesto+"\n"); }
+	public void imprimir() { super.imprimir(); System.out.print(", puesto: "+puesto+"\n"); }
 }

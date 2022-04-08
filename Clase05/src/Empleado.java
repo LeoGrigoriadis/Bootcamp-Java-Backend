@@ -1,7 +1,8 @@
 
 public class Empleado implements imprimirDatos{
 	private String nombre, apellido, dni, direccion, telefono;
-	private double antiguedad, salario;
+	private double salario;
+	private int antiguedad;
 	private Empleado supervisor;
 	
 	//constructor
@@ -14,7 +15,7 @@ public class Empleado implements imprimirDatos{
 		this.salario=salario;
 	}
 	//setters de datos no inicializados
-	public void setAntig(double antiguedad) { this.antiguedad = antiguedad; }
+	public void setAntig(int antiguedad) { this.antiguedad = antiguedad; }
 	
 	//metodos
 	public void cambiarSupervisor(Empleado s) { this.supervisor=s; }
