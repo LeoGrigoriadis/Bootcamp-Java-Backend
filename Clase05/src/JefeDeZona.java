@@ -8,7 +8,7 @@ public class JefeDeZona extends Empleado implements imprimirDatos{
 	//constructor
 	public JefeDeZona(String nombre, String apellido, String dni, String direccion, String telefono, double salario) {
 		super(nombre, apellido, dni, direccion, telefono, salario);
-		this.icrementarSalario(salario+=(salario*0.2));
+		this.icrementarSalario(salario=(salario*0.2));
 	}
 	//getters y setters de datps no inicializados o secundarios
 	public String getDespacho() { return despacho; }

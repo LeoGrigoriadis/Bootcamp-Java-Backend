@@ -14,9 +14,10 @@ public class Empleado implements imprimirDatos{
 		this.telefono=telefono;
 		this.salario=salario;
 	}
-	//setters de datos no inicializados
-	public void setAntig(int antiguedad) { this.antiguedad = antiguedad; }
-	
+	//setters y getters de datos no inicializados
+	public void setAntig(int antiguedad) { this.antiguedad = antiguedad; }	
+	public Empleado getSupervisor() { return supervisor; }
+
 	//metodos
 	public void cambiarSupervisor(Empleado s) { this.supervisor=s; }
 	public void icrementarSalario(double aux) { this.salario+=aux; }
@@ -25,6 +26,6 @@ public class Empleado implements imprimirDatos{
 	@Override
 	public void imprimir() {
 		System.out.print("nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", direccion=" + direccion
-		+ ", telefono=" + telefono + ", antiguedad=" + antiguedad + ", salario=" + salario + ", supervisor="+ supervisor);
+		+ ", telefono=" + telefono + ", antiguedad=" + antiguedad + ", salario=" + salario);
 	}
 }
