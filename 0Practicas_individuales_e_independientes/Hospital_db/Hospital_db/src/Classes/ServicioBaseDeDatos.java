@@ -12,10 +12,10 @@ public class ServicioBaseDeDatos implements Conexion{
 	@Override
 	public boolean UserRegistrado(Usuario u) {
 		boolean ret=false;
-		for(Usuario aux:user) { 
-			if(aux.getId()==u.getId()) ret=true;
+		for(Usuario aux:user) {
+			if(aux.getNombreUser().equals(u.getNombreUser())&&aux.getContraUser().equals(u.getContraUser())) ret=true;
 			else ret=false;
-			}
+		}	
 		return ret;
 	}
 }

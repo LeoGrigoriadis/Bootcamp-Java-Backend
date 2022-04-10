@@ -5,9 +5,9 @@ public class main {
 	public static void main(String[] args) {
 		//variables locales
 		boolean flag=false, esCliente; int op;
-		Scanner teclado = new Scanner(System.in);
 		String username, password;
 		//objetos
+		Scanner teclado = new Scanner(System.in);
 		Conexion a= new ServicioBaseDeDatos();
 		AccesoADatos access=new AccesoADatos(a);
 		//interfaz grafica
@@ -30,14 +30,14 @@ public class main {
 					op=teclado.nextInt();
 					if(op==0) {
 						esCliente=true;
-						Usuario u=new Cliente(username,password, 1, esCliente);
+						Usuario u=new Cliente(username, password, esCliente);
 						if(access.UserRegistrado(u)&&u.getEsCliente()) System.out.println("Inició sesión correctamente. Cliente");
 						else if(access.UserRegistrado(u)&&u.getEsCliente()==false) System.out.println("Inició sesión correctamente. Empleado");
 						else System.out.println("No se pudo iniciar sesión. Revise su nombre de usuario o contraseña.");
 					}
 					else if(op==1) {
 						esCliente=false;
-						Usuario u=new Empleado(username,password, 1, esCliente);
+						Usuario u=new Empleado(username, password, esCliente);
 						if(access.UserRegistrado(u)&&u.getEsCliente()) System.out.println("Inició sesión correctamente. Cliente");
 						else if(access.UserRegistrado(u)&&u.getEsCliente()==false) System.out.println("Inició sesión correctamente. Empleado");
 						else System.out.println("No se pudo iniciar sesión. Revise su nombre de usuario o contraseña.");
@@ -52,12 +52,12 @@ public class main {
 					op=teclado.nextInt();
 					if(op==0) {
 						esCliente=true;
-						Usuario u=new Cliente(username,password, 1, esCliente);
+						Usuario u=new Cliente(username,password, esCliente);
 						access.altaUser(u);
 					}
 					else if(op==1) {
 						esCliente=false;
-						Usuario u=new Empleado(username,password, 1, esCliente);
+						Usuario u=new Empleado(username,password, esCliente);
 						access.altaUser(u);
 					}
 					break;

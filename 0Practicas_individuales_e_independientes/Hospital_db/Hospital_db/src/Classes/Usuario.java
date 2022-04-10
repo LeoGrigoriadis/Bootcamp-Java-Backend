@@ -2,13 +2,11 @@ package Classes;
 
 public abstract class Usuario {
 	private String nombreUser, contraUser;
-	private int id;
 	private boolean esCliente;
 	//constructor
-	public Usuario(String nombreUser, String contraUser, int id, boolean esCliente) {
+	public Usuario(String nombreUser, String contraUser, boolean esCliente) {
 		this.nombreUser = nombreUser;
 		this.contraUser = contraUser;
-		this.id=id;
 		this.esCliente=esCliente;
 	}
 	//setters y getters
@@ -16,5 +14,4 @@ public abstract class Usuario {
 	public boolean getEsCliente() { return esCliente; }
 	public String getNombreUser() { return nombreUser; }
 	public String getContraUser() { return contraUser; }
-	public int getId() { return id; }	
 }
