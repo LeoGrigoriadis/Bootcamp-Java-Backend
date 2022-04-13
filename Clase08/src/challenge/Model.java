@@ -2,27 +2,22 @@ package challenge;
 import java.sql.*;
 
 public class Model {
-	private Statement st;
-	private ResultSet rs;
+	protected Statement st;
+	protected ResultSet rs;
+	protected Connection conectado;
+	
 	private String script, nombre, apellido, direccion;
 	private Date fechaNacimiento;
 	private int id, dni, vendedor_id;
+	
 	public Model(Connection conectado) {
-		try {
-			script="SELECT * from Cliente";
-			st=conectado.createStatement();
-			rs=st.executeQuery(script);
-			while(rs.next()) {
-				id= rs.getInt("id");
-				nombre=rs.getString("nombre");
-				apellido=rs.getString("apellido");
-				dni=rs.getInt("dni");
-				direccion=rs.getString("direccion");
-				fechaNacimiento=rs.getDate("fechaNacimiento");
-				vendedor_id=rs.getInt("vendedor_id");
-			}
-		}catch (SQLException e) { e.printStackTrace(); System.out.println("Tabla no encontrada."); }
+		this.conectado=conectado;
 	}
+	
+	public Statement getSt() { return st; }
+	public ResultSet getRs() { return rs; }
+	public String getScript() { return script; }
+	public void setScript(String script) { this.script = script; }
 	public String getNombre() { return nombre; }
 	public void setNombre(String nombre) { this.nombre = nombre; }
 	public String getApellido() { return apellido; }
