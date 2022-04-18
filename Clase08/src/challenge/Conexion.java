@@ -8,7 +8,6 @@ public class Conexion {
 		String passDb="";
 		Connection conectar=null;
 		try {
-			System.out.println("Conectado correctamente.");
 			conectar=DriverManager.getConnection(urlServer, userDb, passDb);
 			return conectar;
 		} catch (SQLException e) { 
