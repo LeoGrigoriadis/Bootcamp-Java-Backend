@@ -3,15 +3,21 @@ package Clase13_.Clase13_Model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Document(collection = "usuarios")
 public class User {
 	
 	@Id  	//id auto insertado
 	private String id;
 			//atributos
+	@ApiModelProperty(position=1)
 	private String nombre;
+	@ApiModelProperty(position=2)
 	private String apellido;
+	@ApiModelProperty(position=3)
 	private String direccion;
+	@ApiModelProperty(position=4)
 	private int dni;
 	
 	//constructores
