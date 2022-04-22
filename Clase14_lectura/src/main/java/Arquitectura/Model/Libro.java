@@ -7,9 +7,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Libro {
 	
 	@Id private int id;
-	
 	private String autor, nombre, editorial, fecha;
 	
+	//constructor
 	public Libro(String nombre, String autor, String editorial, String fecha) {
 		super();
 		this.autor = autor;
@@ -17,7 +17,7 @@ public class Libro {
 		this.editorial = editorial;
 		this.fecha = fecha;
 	}
-
+	//setters y getters
 	public String getAutor() { return autor; }
 	public void setAutor(String autor) { this.autor = autor; }
 

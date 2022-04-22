@@ -18,7 +18,7 @@ import Arquitectura.Model.Libro;
 
 @RestController
 @RequestMapping("/libreria")
-public class LibroAdapter {
+public class LibroAdapter implements LibroAdapterInterface{
 	
 	LibroPort lp;
 	
