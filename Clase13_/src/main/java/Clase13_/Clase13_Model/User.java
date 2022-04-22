@@ -7,17 +7,17 @@ import io.swagger.annotations.ApiModelProperty;
 
 @Document(collection = "usuarios")
 public class User {
-	
+	@ApiModelProperty(hidden=true)
 	@Id  	//id auto insertado
 	private String id;
 			//atributos
-	@ApiModelProperty(position=1)
+	@ApiModelProperty(position=1, required=true)
 	private String nombre;
 	@ApiModelProperty(position=2)
 	private String apellido;
 	@ApiModelProperty(position=3)
 	private String direccion;
-	@ApiModelProperty(position=4)
+	@ApiModelProperty(position=4, required=true)
 	private int dni;
 	
 	//constructores
