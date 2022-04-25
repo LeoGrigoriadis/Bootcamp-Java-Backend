@@ -1,10 +1,8 @@
 package Login.Adapter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.validation.Valid;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,12 +39,12 @@ public class AuthAdapter {
 	@PostMapping("/login")
 	public  ResponseEntity<?> login(@Valid @RequestBody RequestLogin login){
 		try {
-			List<Usuario> user=new ArrayList<Usuario>();
-			userPort.findByEmail(login.getEmail()).forEach(user::add);
-			Usuario password = user.get(0);
-			if(user.isEmpty()) { return ResponseEntity.badRequest().body(new MessageResponse("Error: El email no está registrado.")); }
+			Document user=new Document("email",login.getEmail());
+			Usuario u=userPort.findByEmail(user);
+			
+			if(u==null) { return ResponseEntity.badRequest().body(new MessageResponse("Error: El email no está registrado.")); }
 			else { 
-				if(login.getEmail().equals(password.getPassword())) {
+				if(login.getPassword().equals(u.getPassword())) {
 					return ResponseEntity.badRequest().body(new MessageResponse("Inicio de sesión exitoso."));
 				}
 			}
