@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Accounts Creation</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class ="container">
+    <form th:acction="@{accounts/create}" th:object="${account}" method="post">
+
+        <label>CBU: </label>
+        <input type="text" name="cbu" th:field="*{cbu}"/>
+        <br>
+        <label>Initial Balance: </label>
+        <input type="text" name="balance" th:field="*{balance}"/>
+        <br>
+
+        <input type="text" name="clientId" th:field="*{clientId}" hidden />
+        <br>
+        <button type="submit">
+            Create Account
+        </button>
+        <br>
+    </form>
+    <a th:href="@{/clients}">Go back</a>
+</div>
+</body>
+</html>

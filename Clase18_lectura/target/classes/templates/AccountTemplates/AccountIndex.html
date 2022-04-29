@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Accounts</title>
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<br> <br>
+<div class = "container">
+  <button class="btn btn-dark" > <a th:href="@{/clients}"> Go Back</a></button>
+  <table class ="table table-hover">
+
+    <thead>
+    <tr>
+      <th> Id </th>
+      <th> CBU </th>
+      <th> Balance </th>
+      <th> Client ID </th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="account: ${accounts}">
+      <td th:text = ${account.id}></td>
+      <td th:text = ${account.cbu}></td>
+      <td th:text = ${account.balance}></td>
+      <td th:text = ${account.clientId}></td>
+
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

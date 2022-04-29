@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+</head>
+<body class = "bg-dark">
+<br> <br>
+<div class = "container">
+    <button class="btn btn-dark" > <a th:href="@{/clients/create}"> Create Client</a></button>
+    <button class="btn btn-dark" > <a th:href="@{/accounts}"> All Accounts</a></button>
+<table class ="table table-hover">
+
+    <thead>
+    <tr>
+        <th> Id </th>
+        <th> FirstName </th>
+        <th> LastName </th>
+        <th> DNI </th>
+        <th> Actions </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="client: ${clients}">
+        <td th:text = ${client.id}></td>
+        <td th:text = ${client.firstName}></td>
+        <td th:text = ${client.lastName}></td>
+        <td th:text = ${client.dni}></td>
+        <td>
+            <button class="btn btn-dark" > <a th:href="@{accounts/filterAccounts/{id} (id = ${client.id})}"> Accounts </a> </button>
+            <button class="btn btn-dark" > <a th:href="@{accounts/create/{id} (id = ${client.id})}"> Add Account </a> </button>
+        </td>
+
+
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
