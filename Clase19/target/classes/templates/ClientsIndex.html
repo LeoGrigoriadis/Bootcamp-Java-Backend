@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Client Index</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    </head>
+    <body class = "bg-dark">
+        <br><br>
+            <div class = "container">
+                <a th:href="@{/clients/create}"><button class="btn btn-dark" >  Create Client</button></a>
+                    <br>
+                    <table class ="table table-hover" >
+                        <thead>
+                            <tr>
+                                <th class="text-center"> Id </th>
+                                <th class="text-center"> Firstname </th>
+                                <th class="text-center"> Lastname </th>
+                                <th class="text-center"> Address </th>
+                                <th class="text-center"> DNI </th>
+                                <th class="text-center"> Actions </th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align:center">
+                            <tr th:each="client: ${clients}">
+                                <td th:text = ${client.id}></td>
+                                <td th:text = ${client.first_name}></td>
+                                <td th:text = ${client.last_name}></td>
+                                <td th:text = ${client.address}></td>
+                                <td th:text = ${client.dni}></td>
+                                <td>
+                                    <a th:href="@{clients/update/{id} (id = ${client.id})}"><button class="btn btn-dark" > Update </button></a>
+                                    <a th:href="@{clients/delete/{id} (id = ${client.id})}"><button class="btn btn-dark" > Delete </button> </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+        </div>
+    </body>
+</html>

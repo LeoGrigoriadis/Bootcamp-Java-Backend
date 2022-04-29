@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Client Creation</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class ="container">
+      <form th:acction="@{clients/create}" th:object="${client}" method="post">
+
+        <label>FirstName: </label>
+        <input type="text" name="first_name" th:field="*{first_name}"/>
+        <br>
+        <label>LastName: </label>
+        <input type="text" name="last_name" th:field="*{last_name}"/>
+        <br>
+        <label>Address: </label>
+        <input type="text" name="address" th:field="*{address}"/>
+        <br>
+        <label>DNI: </label>
+        <input type="text" name="dni" th:field="*{dni}"/>
+        <br>
+        <button type="submit">
+          Create Client
+        </button>
+        <br>
+      </form>
+      <a th:href="@{/clients}"><button class="btn btn-dark" >Go back</button></a>
+    </div>
+  </body>
+</html>

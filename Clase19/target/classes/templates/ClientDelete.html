@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Client Delete</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class ="container">
+    <form th:acction="@{clients/delete}" th:object="${client}" method="delete">
+        <h5>¿Seguro que deseas eliminar este elemento?</h5>
+        <br>
+        <button type="submit">
+            Delete Client
+        </button>
+        <br><br>
+    </form>
+    <a th:href="@{/clients}"><button class="btn btn-dark" >Go back</button></a>
+</div>
+</body>
+</html>
