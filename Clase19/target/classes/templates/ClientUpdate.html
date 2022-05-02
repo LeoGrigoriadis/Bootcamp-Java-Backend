@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class ="container">
-    <form th:acction="@{clients/update}" th:object="${client}" method="put">
+    <form th:acction="@{clients/update}" th:object="${client}" method="post">
 
         <label>FirstName: </label>
         <input type="text" name="first_name" th:field="*{first_name}"/>

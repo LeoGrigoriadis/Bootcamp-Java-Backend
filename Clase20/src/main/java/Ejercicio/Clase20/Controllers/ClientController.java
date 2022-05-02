@@ -1,7 +1,7 @@
-package Ejercicio.Clase19.Controllers;
+package Ejercicio.Clase20.Controllers;
 
-import Ejercicio.Clase19.Controllers.Service.ClientService;
-import Ejercicio.Clase19.Models.Client;
+import Ejercicio.Clase20.Controllers.Service.ClientService;
+import Ejercicio.Clase20.Models.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,12 +39,6 @@ public class ClientController {
         client.setId(id);
         model.addAttribute("client", client);
         return "ClientUpdate";
-    }
-
-    @PostMapping("/update")
-    public String updateClient(@ModelAttribute("client") Client client){
-        cs.saveClient(client);
-        return "redirect:/clients";
     }
 
     @GetMapping("/delete/{id}")
