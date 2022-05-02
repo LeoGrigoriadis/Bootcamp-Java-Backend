@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Upload File</title>
@@ -22,6 +22,8 @@
         <input type="file" name="file" />
         <input class="btn btn-dark" style="margin: 15px 10px" type="submit" value="Submit"/>
     </form>
+    <a th:href="@{/clients}"><button style="margin:10px 0px" class="btn btn-dark" >Go back</button></a>
+    <br>
 </div>
 <footer>
     <div class="jumbotron text-center" style="margin-bottom:0">

@@ -20,6 +20,12 @@ public class ClientController {
         return "ClientsIndex";
     }
 
+    @GetMapping("/find")
+    public String getClients(Model model, @RequestParam long dni){
+        model.addAttribute("clients", cs.getOneUser(dni));
+        return "ClientsIndex";
+    }
+
     @GetMapping("/create")
     public String showCreateClient(Model model){
         Client client=new Client();

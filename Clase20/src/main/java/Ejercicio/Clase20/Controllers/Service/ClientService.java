@@ -21,4 +21,8 @@ public class ClientService {
         client=cr.findById(id);
         cr.delete(client);
     }
+
+    public Client getOneUser(long dni) {
+        return cr.findByDni(dni);
+    }
 }

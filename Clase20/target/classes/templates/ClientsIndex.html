@@ -19,10 +19,16 @@
         </div>
             <div class = "container">
                 <div class="row">
-                    <div class="col-sm-2 text-center">
+                    <div style="margin: 0px 0px 20px 0px" class="col-sm-2 text-center">
                         <h3>Menu</h3>
-                        <a th:href="@{/clients/create}"><button style="margin:10px 0px" class="btn btn-dark" >Create Client</button></a>
-                        <a th:href="@{/uploads}"><button class="btn btn-dark" >Upload File</button></a>
+                        <form th:action="@{/clients/find}">
+                            <h6>Filter by DNI:</h6>
+                            <input style="width:100%" type="number" th:name="dni" />
+                            <input style="margin: 10px 0px; width:100%" class="btn btn-outline-dark" type="submit" value="Find"/>
+                        </form>
+                        <a th:href="@{/clients}"><button class="btn btn-dark" style=" width:100%" >View All Clients</button></a>
+                        <a th:href="@{/clients/create}"><button style="margin:10px 0px; width:100%" class="btn btn-dark" >Create Client</button></a>
+                        <a th:href="@{/uploads}"><button class="btn btn-dark" style="width:100%" >Upload File</button></a>
                         <br>
                     </div>
                     <div class="col-sm-10">
