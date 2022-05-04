@@ -13,8 +13,6 @@ import javax.persistence.*;
 public class Class {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
     private long code;
     private String name;
 }

@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/find")
-    public String getClients(Model model,@Valid @RequestParam long id){
+    public String findClient(Model model,@Valid @RequestParam long id){
         model.addAttribute("users", us.findById(id));
         return "UserIndex";
     }
