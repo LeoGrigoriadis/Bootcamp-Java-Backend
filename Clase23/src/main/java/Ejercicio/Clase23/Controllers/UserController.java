@@ -44,20 +44,22 @@ public class UserController {
         return "redirect:/users";
     }
 
-    /*@GetMapping("/update/{id}")
+    @GetMapping("/update/{id}")
     public String showUpdateClient(Model model,@PathVariable("id") long id){
         User user= us.findById(id);
+        System.out.print(user);
         model.addAttribute("user", user);
         return "UserUpdate";
     }
 
-    @PostMapping("/update")
-    public String updateUser(@Valid @ModelAttribute("user") User user, RedirectAttributes redirect){
+    @PostMapping("/update/{id}")
+    public String updateUser(@Valid @ModelAttribute("user") User user, @PathVariable long id, RedirectAttributes redirect){
+        user.setId(id);
         us.updateUser(user);
         redirect.addFlashAttribute("message", "User actualizado." )
                 .addFlashAttribute("class", "success");
         return "redirect:/users";
-    }*/
+    }
 
     @GetMapping("/delete/{id}")
     public String showDeleteClient(@PathVariable("id") long id, RedirectAttributes redirect){

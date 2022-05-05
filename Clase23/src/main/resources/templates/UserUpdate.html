@@ -9,7 +9,7 @@
 <div th:insert="../static/index::navbar"></div>
 <div class = "container">
     <a th:href="@{/users}"><button style="margin:0px 20px 20px 0px" class="btn btn-dark" >Go back</button></a>
-    <form th:action="@{/users/update}" th:object="${user}" method="post">
+    <form th:action="@{/users/update/{id} (id=${user.id})}" th:object="${user}" method="post">
         <div class="form-group">
             <label>name: </label>
             <input class="form-control" type="text" name="name" th:field="*{name}"/>

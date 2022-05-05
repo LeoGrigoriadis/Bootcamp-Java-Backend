@@ -44,7 +44,7 @@
                     <td th:text = ${user.dni}></td>
                     <td th:text = ${user.phNumber}></td>
                     <td>
-                        <!--<a th:href="@{users/update/{id} (id = ${user.id})}"><button class="btn btn-dark" > Update </button></a>-->
+                        <a th:href="@{users/update/{id} (id = ${user.id})}"><button class="btn btn-dark" > Update </button></a>
                         <a th:href="@{users/delete/{id} (id = ${user.id})}"><button class="btn btn-dark" > Delete </button></a>
                     </td>
                 </tr>
