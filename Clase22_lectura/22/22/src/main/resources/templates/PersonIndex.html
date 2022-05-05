@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Index</title>
+    <div th:insert="../static/index::header"></div>
+</head>
+<body>
+<div th:insert="../static/index::navbar"></div>
+
+
+<div class = "container">
+    <div class="row">
+        <div style="margin: 0px 0px 20px 0px; padding:15px; border: 1px solid #c9c9c9; border-radius: 5px;"
+             class="col-sm-2 text-center">
+            <h3>Menu</h3>
+            <form th:action="@{/person/find}">
+                <h6>Filter by Id:</h6>
+                <input style="width:100%" type="number" th:name="id" placeholder="  id:"/>
+                <input style="margin: 10px 0px; width:100%" class="btn btn-outline-dark" type="submit" value="Find"/>
+            </form>
+            <a th:href="@{/person}"><button class="btn btn-dark" style=" width:100%" >View All Person</button></a>
+            <a th:href="@{/person/create}"><button style="margin:10px 0px; width:100%" class="btn btn-dark" >Create an Person</button></a>
+            <a th:href="@{/person/all}"><button class="btn btn-dark" style="width:100%" >Go Back</button></a>
+            <br>
+        </div>
+        <div class="col-sm-10">
+            <table class ="table table-hover" >
+                <thead>
+                <tr>
+                    <th class="text-center"> code </th>
+                    <th class="text-center"> name </th>
+                    <th class="text-center"> Actions </th>
+                </tr>
+                </thead>
+                <tbody style="text-align:center">
+                <tr th:each="person: ${personas}">
+                    <td th:text = ${person.id}></td>
+                    <td th:text = ${person.nombre}></td>
+                    <td th:text = ${person.apellido}></td>
+                    <td>
+                        <a th:href="@{personas/update/{id} (id = ${person.id})}"><button class="btn btn-dark" > Update </button></a>
+                        <a th:href="@{personas/delete/{id} (id = ${person.id})}"><button class="btn btn-dark" > Delete </button></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div th:insert="../static/index::alert"></div>
+<footer th:insert="../static/index::footer"></footer>
+</body>
+</html>
