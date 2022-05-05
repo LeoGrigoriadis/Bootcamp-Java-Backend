@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+    <div th:insert="../static/index::header"></div>
+</head>
+<body>
+<div th:insert="../static/index::navbar"></div>
+<div class = "container">
+    <a th:href="@{/users}"><button style="margin:0px 20px 20px 0px" class="btn btn-dark" >Go back</button></a>
+    <form th:action="@{/users/update}" th:object="${user}" method="post">
+        <div class="form-group">
+            <label>name: </label>
+            <input class="form-control" type="text" name="name" th:field="*{name}"/>
+        </div>
+        <div class="form-group">
+            <label>lastName: </label>
+            <input class="form-control" type="text" name="lastName" th:field="*{lastName}"/>
+        </div>
+        <div class="form-group">
+            <label>dni: </label>
+            <input class="form-control" type="text" name="dni" th:field="*{dni}"/>
+        </div>
+        <div class="form-group">
+            <label>phone Number: </label>
+            <input class="form-control" type="text" name="phNumber" th:field="*{phNumber}"/>
+        </div>
+        <button class="btn btn-dark" type="submit"> Update User </button>
+        <br>
+    </form>
+</div>
+<footer th:insert="../static/index::footer"></footer>
+</body>
+</html>
