@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -51,7 +52,10 @@ public class StudentController {
     }
 
     @PostMapping("/create")
-    public String saveClass(@Valid @ModelAttribute("student") Student student, RedirectAttributes redirect){
+    public String saveClass(@Valid @ModelAttribute("student") Student student, BindingResult result, RedirectAttributes redirect){
+        if(result.hasErrors()){
+            return "UserCreate";
+        }
         ss.save(student);
         redirect.addFlashAttribute("message", "Datos insertados correctamente." )
                 .addFlashAttribute("class", "success");
