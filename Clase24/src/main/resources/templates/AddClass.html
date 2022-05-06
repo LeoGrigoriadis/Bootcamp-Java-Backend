@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User Index</title>
+    <div th:insert="../static/index::header"></div>
+</head>
+<body>
+<div th:insert="../static/index::navbar"></div>
+
+
+<div class = "container">
+    <a th:href="@{/students/1/10}"><button class="btn btn-dark" style="margin: 15px 25px 15px 0; display:inline-block">Go Back</button></a>
+    <h3 style="display:inline-block"> Agregar materias al estudiante <bold th:text="${student.firstname}+' '+${student.lastname}"></bold></h3>
+    <table class ="table table-hover">
+        <thead>
+        <tr>
+            <th class="text-center"> materias </th>
+            <th class="text-center"> Actions </th>
+        </tr>
+        </thead>
+        <tbody style="text-align:center">
+        <tr th:each="c: ${classes}">
+            <td th:text = ${c.name}></td>
+            <td><a th:href="@{/registration/add/{id}/{code} (id = ${student.id}, code = ${c.code})}"><button class="btn btn-dark" method="post"> Add </button></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:insert="../static/index::alert"></div>
+<footer th:insert="../static/index::footer"></footer>
+</body>
+</html>

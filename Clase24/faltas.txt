@@ -1,0 +1,6 @@
+clase 24
+faltan validaciones, funciones de crud (delete/update)
+documentar
+filtrados estudiantes
+filtrados materias
+
