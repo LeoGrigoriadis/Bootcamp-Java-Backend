@@ -1,6 +1,8 @@
 package Ejercicio.Clase22.Controllers;
 
+import Ejercicio.Clase22.Controllers.Service.RegistrationService;
 import Ejercicio.Clase22.Controllers.Service.UserService;
+import Ejercicio.Clase22.Models.Registration;
 import Ejercicio.Clase22.Models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

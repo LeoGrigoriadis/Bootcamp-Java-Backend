@@ -13,6 +13,7 @@ public class StudentService {
     StudentRepository sr;
 
     public ArrayList<Student> getAllStudents() { return (ArrayList<Student>) sr.findAll(); }
-    public Student findById(long dni) { return sr.findByDni(dni); }
+    public Student findByDni(long dni) { return sr.findByDni(dni); }
     public void save(Student student) { sr.save(student); }
+    public Student findById(long id) { return sr.findById(id); }
 }

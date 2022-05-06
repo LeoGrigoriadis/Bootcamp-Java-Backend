@@ -27,7 +27,6 @@
         <a href="/users"><button class="btn btn-dark">Go to CRUD Users</button></a>
         <a href="/classes"><button class="btn btn-dark">Go to CRUD Class</button></a>
         <a href="/students"><button class="btn btn-dark">Go to CRUD Student</button></a>
-        <a href="/registrations"><button class="btn btn-dark">Go to CRUD Registration</button></a>
         </div>
     </div>
     <div th:fragment="alert" class="container">
@@ -35,8 +34,8 @@
              th:text="${message}" class="alert">
         </div>
     </div>
-    <footer th:fragment="footer" style="position:fixed; bottom:0; width:100%">
-        <div class="jumbotron text-center" style="margin-bottom:0">
+    <footer th:fragment="footer" style="width:100%">
+        <div class="jumbotron text-center" style="margin:0">
             <div class = "container">
                 <h3 style="font-size:28px;">Footer</h3>
                 <p>@Author: Grigoriadis Leonel - <a href="https://github.com/LeoGrigoriadis"> GitHub</a></p>

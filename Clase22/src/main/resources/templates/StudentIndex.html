@@ -44,8 +44,10 @@
                     <td th:text = ${student.dni}></td>
                     <td th:text = ${student.phNumber}></td>
                     <td>
-                        <a th:href="@{students/update/{id} (id = ${student.id})}"><button class="btn btn-dark" > Update </button></a>
-                        <a th:href="@{students/delete/{id} (id = ${student.id})}"><button class="btn btn-dark" > Delete </button></a>
+                        <a th:href="@{/students/update/{id} (id = ${student.id})}"><button class="btn btn-dark" > Update </button></a>
+                        <a th:href="@{/students/delete/{id} (id = ${student.id})}"><button class="btn btn-dark" > Delete </button></a>
+                        <a th:href="@{/students/addClass/{id} (id = ${student.id})}"><button class="btn btn-dark" > Add Class </button></a>
+                        <a th:href="@{/students/view/{id} (id = ${student.id})}"><button class="btn btn-dark" > View Classes </button></a>
                     </td>
                 </tr>
                 </tbody>
