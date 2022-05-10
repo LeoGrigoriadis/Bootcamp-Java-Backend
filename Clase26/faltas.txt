@@ -1,0 +1,5 @@
+clase 24
+faltan validaciones, funciones de crud (delete/update)
+
+
+

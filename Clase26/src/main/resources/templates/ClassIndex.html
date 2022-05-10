@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Index</title>
+    <div th:insert="../static/index::header"></div>
+</head>
+<body>
+<div th:insert="../static/index::navbar"></div>
+
+
+<div class = "container">
+    <div class="row">
+        <div style="margin: 0px 0px 20px 0px; padding:15px; border: 1px solid #c9c9c9; border-radius: 5px; max-height: 350px;"
+             class="col-sm-2 text-center">
+            <h3>Menu</h3>
+            <form th:action="@{'/classes/find/'+${numPageActual}+'/'+${numSize}}">
+                <h6>Filter by Code:</h6>
+                <input style="width:100%" type="number" th:name="code" placeholder="  code:"/>
+                <input style="margin: 10px 0px; width:100%" class="btn btn-outline-dark" type="submit" value="Find"/>
+            </form>
+            <a th:href="@{'/classes/'+${numPageActual}+'/'+${numSize}}"><button class="btn btn-dark" style=" width:100%" >View All Classes</button></a>
+            <a th:href="@{/classes/create}"><button style="margin:10px 0px; width:100%" class="btn btn-dark" >Create an Class</button></a>
+            <a th:href="@{/}"><button class="btn btn-dark" style="width:100%" >Go Back</button></a>
+            <br>
+        </div>
+        <div class="col-sm-10">
+            <table class ="table table-hover" >
+                <thead>
+                <tr>
+                    <th class="text-center"> code </th>
+                    <th class="text-center"> name </th>
+                    <th class="text-center"> Actions </th>
+                </tr>
+                </thead>
+                <tbody style="text-align:center">
+                <tr th:each="class: ${classes}">
+                    <td th:text = ${class.code}></td>
+                    <td th:text = ${class.name}></td>
+                    <td>
+                        <a th:href="@{classes/update/{code} (code = ${class.code})}"><button class="btn btn-dark" > Update </button></a>
+                        <a th:href="@{classes/delete/{code} (code = ${class.code})}"><button class="btn btn-dark" > Delete </button></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div th:insert="../static/index::alert"></div>
+    <div style="text-align:center; margin-bottom:20px;">
+        <a th:if="${numPageActual>1}" th:href="@{'/classes/'+${numPageActual-1}+'/'+${numSize}}" class="btn btn-dark">
+            Anterior
+        </a>
+        <button th:text="${numPageActual}" class="btn btn-dark" disabled></button>
+        <a th:if="${numPageActual<totalPage}" th:href="@{'/classes/'+${numPageActual+1}+'/'+${numSize}}" class="btn btn-dark">
+            Siguiente
+        </a>
+    </div>
+</div>
+<footer th:insert="../static/index::footer"></footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Class</title>
+    <div th:insert="../static/index::header"></div>
+</head>
+<body>
+<div th:insert="../static/index::navbar"></div>
+<div class = "container">
+    <a th:href="@{/students/1/10}"><button style="margin:0px 20px 20px 0px" class="btn btn-dark" >Go back</button></a>
+    <form th:action="@{/students/create}" th:object="${student}" method="post">
+        <div class="form-group">
+            <label>Dni: </label>
+            <input class="form-control" type="text" name="dni" th:field="*{dni}"/>
+        </div>
+        <div class="form-group">
+            <label>firstname: </label>
+            <input class="form-control" type="text" name="firstname" th:field="*{firstname}"/>
+        </div>
+        <div class="form-group">
+            <label>lastname: </label>
+            <input class="form-control" type="text" name="lastname" th:field="*{lastname}"/>
+        </div>
+        <div class="form-group">
+            <label>Phone Number: </label>
+            <input class="form-control" type="text" name="phNumber" th:field="*{phNumber}"/>
+        </div>
+        <button class="btn btn-dark" type="submit">
+            Create Student
+        </button>
+        <br>
+    </form>
+</div>
+<footer th:insert="../static/index::footer"></footer>
+</body>
+</html>

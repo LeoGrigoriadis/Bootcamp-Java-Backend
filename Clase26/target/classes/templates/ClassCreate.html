@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Class</title>
+    <div th:insert="../static/index::header"></div>
+</head>
+<body>
+<div th:insert="../static/index::navbar"></div>
+<div class = "container">
+    <a th:href="@{/classes/1/10}"><button style="margin:0px 20px 20px 0px" class="btn btn-dark" >Go back</button></a>
+    <form th:action="@{/classes/create}" th:object="${clas}" method="post">
+        <div class="form-group">
+            <label>Name: </label>
+            <input class="form-control" type="text" name="name" th:field="*{name}"/>
+        </div>
+        <button style="margin-bottom:15px;" class="btn btn-dark" type="submit">
+            Create Class
+        </button>
+        <br>
+    </form>
+</div>
+<footer th:insert="../static/index::footer"></footer>
+</body>
+</html>

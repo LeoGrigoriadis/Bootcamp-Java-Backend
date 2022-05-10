@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Index</title>
+    <div th:insert="../static/index::header"></div>
+</head>
+<body>
+<div th:insert="../static/index::navbar"></div>
+
+
+<div class = "container">
+    <a th:href="@{../}"><button style="margin:0px 20px 20px 0px" class="btn btn-dark" >Go back</button></a>
+    <form th:action="@{/reports/send}" th:object="${report}" method="get">
+
+        <h6>Email:</h6>
+        <input style="width:300px; margin:10px 0px" type="email" th:name="email" th:field="*{email}" placeholder="  example@gmail.com..."/>
+
+        <div style="display:block">
+        <div style="display:inline-block">
+            <h6>Select type file:</h6>
+            <select style="width:300px;" class="form-control" th:name="type" th:field="*{type}">
+                <option value="Excel">Excel</option>
+                <option value="PDF">PDF</option>
+            </select>
+        </div>
+        <div style="display:inline-block">
+            <h6>Select List:</h6>
+            <select style="width:300px;" class="form-control" th:name="list" th:field="*{list}">
+                <option value="Students">All Students</option>
+                <option value="Classes">All Classes</option>
+                <option value="Alphabetical">All Students in Alphabetical Order</option>
+            </select>
+        </div>
+        </div><br>
+        <input class="btn btn-dark" type="submit" value="Send by Email"/>
+    </form>
+    <div th:insert="../static/index::alert"></div>
+    <br><br><br>
+</div>
+<footer th:insert="../static/index::footer"></footer>
+</body>
+</html>
